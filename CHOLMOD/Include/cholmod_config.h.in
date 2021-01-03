@@ -45,22 +45,37 @@
 /* Use the compiler flag, or uncomment the definition(s), if you want to use
  * one or more non-default installation options: */
 
+/* Define to disable the Check module */
+#undef NCHECK
+
+/* Define to disable the Cholesky module */
+#undef NCHOLESKY
+
+/* Define to disable the Partition module */
+#undef NCAMD
+
+/* Define to disable METIS support in the Partition module */
+#undef NPARTITION
+
+/* Define to disable the MatrixOps module */
+#undef NMATRIXOPS
+
+/* Define to disable the Modify module */
+#undef NMODIFY
+
+/* Define to disable the Supernodal module */
+#undef NSUPERNODAL
+
 /*
-#define NCHECK
-#define NCHOLESKY
-#define NCAMD
-#define NPARTITION
-
-#define NMATRIXOPS
-#define NMODIFY
-#define NSUPERNODAL
-
 #define NPRINT
 
 #define LONGBLAS long
 #define LONGBLAS long long
 #define NSUNPERF
 */
+
+/* Define to disable GPL-licensed modules */
+#undef NGPL
 
 /* The option disables the MatrixOps, Modify, and Supernodal modules.  The
     existence of this #define here, and its use in these 3 modules, does not

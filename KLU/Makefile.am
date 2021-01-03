@@ -1,0 +1,9 @@
+ACLOCAL_AMFLAGS = -I m4
+
+SUBDIRS = Include Source User Matrix Demo Tcov Doc
+EXTRA_DIST = README.txt
+
+pkgconfig_DATA = klu.pc
+
+CODE_COVERAGE_BRANCH_COVERAGE = 1
+@CODE_COVERAGE_RULES@

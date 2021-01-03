@@ -1,0 +1,9 @@
+ACLOCAL_AMFLAGS = -I m4
+
+SUBDIRS = Include Source Demo Doc
+EXTRA_DIST = README.txt
+
+pkgconfig_DATA = amd.pc
+
+CODE_COVERAGE_BRANCH_COVERAGE = 1
+@CODE_COVERAGE_RULES@

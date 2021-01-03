@@ -1,0 +1,9 @@
+ACLOCAL_AMFLAGS = -I m4
+
+SUBDIRS = Include Source Matrix Demo Doc
+EXTRA_DIST = README.txt
+
+pkgconfig_DATA = ldl.pc
+
+CODE_COVERAGE_BRANCH_COVERAGE = 1
+@CODE_COVERAGE_RULES@

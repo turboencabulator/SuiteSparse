@@ -1,0 +1,13 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: @PACKAGE_NAME@
+Description: Multifrontal sparse QR factorization
+Version: @PACKAGE_VERSION@
+URL: @PACKAGE_URL@
+Requires.private: cholmod suitesparseconfig
+Libs: -L${libdir} -lspqr
+Libs.private: @TBB_LIBS@ @LAPACK_LIBS@ @BLAS_LIBS@ -lm
+Cflags: -I${includedir}/spqr
