@@ -8,5 +8,5 @@ Description: A concise sparse matrix package
 Version: @PACKAGE_VERSION@
 URL: @PACKAGE_URL@
 Libs: -L${libdir} -lcsparse
-Libs.private: -lm
+Libs.private: @POSIX_LIBS@
 Cflags: -I${includedir}/csparse

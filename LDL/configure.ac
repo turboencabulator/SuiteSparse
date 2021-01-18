@@ -18,8 +18,6 @@ AC_PROG_CC
 AC_PROG_LN_S
 AX_CODE_COVERAGE
 
-AS_VAR_SET([LIBS_SAVED], [$LIBS])
-
 # Checks for libraries.
 PKG_CHECK_MODULES([SUITESPARSECONFIG], [suitesparseconfig])
 PKG_CHECK_MODULES([AMD], [amd],
@@ -34,8 +32,6 @@ AC_CHECK_HEADERS([stdlib.h])
 
 # Checks for library functions.
 AC_FUNC_MALLOC
-
-AS_VAR_SET([LIBS], [$LIBS_SAVED])
 
 AM_CONDITIONAL([AMD], [test "x$have_amd" = "xyes"])
 

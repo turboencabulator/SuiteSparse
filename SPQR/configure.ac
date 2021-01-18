@@ -34,10 +34,18 @@ AC_ARG_WITH([tbb],
 	[],
 	[AS_VAR_SET([with_tbb], [yes])])
 
-AS_VAR_SET([LIBS_SAVED], [$LIBS])
-
 # Checks for libraries.
-AC_CHECK_LIB([m], [sqrt])
+AC_DEFUN([SS_SEARCH_LIBS],
+	[AC_SEARCH_LIBS([$1], [$2],
+		[test "$ac_res" = "none required" || $3="$ac_res $$3"],
+		[AC_MSG_ERROR([cannot find library containing $1])],
+		[$4])])
+
+AS_VAR_SET([LIBS_SAVED], [$LIBS])
+AS_VAR_SET([POSIX_LIBS])
+SS_SEARCH_LIBS([sqrt], [m], [POSIX_LIBS])
+AC_SUBST([POSIX_LIBS])
+AS_VAR_SET([LIBS], [$LIBS_SAVED])
 
 AX_BLAS(
 	[],
@@ -61,9 +69,6 @@ AS_IF([test "x$with_tbb" = "xyes"], [
 AC_TYPE_SIZE_T
 
 # Checks for library functions.
-AC_CHECK_FUNCS([sqrt])
-
-AS_VAR_SET([LIBS], [$LIBS_SAVED])
 
 AS_IF([test "x$with_tbb" = "xyes"], [
 	AC_SUBST([TBB_CFLAGS], [""])

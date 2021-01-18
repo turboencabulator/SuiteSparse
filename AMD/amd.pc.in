@@ -9,5 +9,5 @@ Version: @PACKAGE_VERSION@
 URL: @PACKAGE_URL@
 Requires.private: suitesparseconfig
 Libs: -L${libdir} -lamd
-Libs.private: -lm
+Libs.private: @POSIX_LIBS@
 Cflags: -I${includedir}/amd

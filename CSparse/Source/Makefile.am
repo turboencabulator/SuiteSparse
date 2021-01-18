@@ -66,7 +66,7 @@ endif
 
 lib_LTLIBRARIES = libcsparse.la
 libcsparse_la_SOURCES = $(CSPARSESRC)
-libcsparse_la_LIBADD = -lm $(CODE_COVERAGE_LIBS)
+libcsparse_la_LIBADD = $(POSIX_LIBS) $(CODE_COVERAGE_LIBS)
 libcsparse_la_CPPFLAGS = $(AM_CPPFLAGS) $(CODE_COVERAGE_CPPFLAGS)
 libcsparse_la_CFLAGS = $(AM_CFLAGS) $(CODE_COVERAGE_CFLAGS)
 libcsparse_la_LDFLAGS = -no-undefined -release $(PACKAGE_VERSION)

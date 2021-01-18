@@ -76,10 +76,18 @@ AC_ARG_ENABLE([timing],
 	[],
 	[AS_VAR_SET([enable_timing], [yes])])
 
-AS_VAR_SET([LIBS_SAVED], [$LIBS])
-
 # Checks for libraries.
-AC_CHECK_LIB([m], [sqrt])
+AC_DEFUN([SS_SEARCH_LIBS],
+	[AC_SEARCH_LIBS([$1], [$2],
+		[test "$ac_res" = "none required" || $3="$ac_res $$3"],
+		[AC_MSG_ERROR([cannot find library containing $1])],
+		[$4])])
+
+AS_VAR_SET([LIBS_SAVED], [$LIBS])
+AS_VAR_SET([POSIX_LIBS])
+SS_SEARCH_LIBS([sqrt], [m], [POSIX_LIBS])
+AC_SUBST([POSIX_LIBS])
+AS_VAR_SET([LIBS], [$LIBS_SAVED])
 
 PKG_CHECK_MODULES([SUITESPARSECONFIG], [suitesparseconfig])
 AS_VAR_SET([CHOLMOD_REQUIRES], ["suitesparseconfig"])
@@ -157,9 +165,6 @@ AC_TYPE_SIZE_T
 
 # Checks for library functions.
 AC_FUNC_MALLOC
-AC_CHECK_FUNCS([sqrt])
-
-AS_VAR_SET([LIBS], [$LIBS_SAVED])
 
 AC_MSG_CHECKING([whether to build mod-check])
 AC_MSG_RESULT([$enable_mod_check])

@@ -17,10 +17,10 @@ if CHOLMOD
 check_PROGRAMS += kludemo kluldemo
 
 kludemo_SOURCES = kludemo.c
-kludemo_LDADD = $(LDADD) $(CHOLMOD_LIBS) -lm
+kludemo_LDADD = $(LDADD) $(CHOLMOD_LIBS) $(POSIX_LIBS)
 
 kluldemo_SOURCES = kluldemo.c
-kluldemo_LDADD = $(LDADD) $(CHOLMOD_LIBS) -lm
+kluldemo_LDADD = $(LDADD) $(CHOLMOD_LIBS) $(POSIX_LIBS)
 
 MATRICES = \
 	$(top_srcdir)/Matrix/1c.mtx \

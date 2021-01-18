@@ -319,5 +319,5 @@ libumfpack_la_LIBADD = \
 	libumf_dl.la libumfpack_dl.la \
 	libumf_zi.la libumfpack_zi.la \
 	libumf_zl.la libumfpack_zl.la \
-	$(AMD_LIBS) $(SUITESPARSECONFIG_LIBS) $(BLAS_LIBS) -lm $(CODE_COVERAGE_LIBS)
+	$(AMD_LIBS) $(SUITESPARSECONFIG_LIBS) $(BLAS_LIBS) $(POSIX_LIBS) $(CODE_COVERAGE_LIBS)
 libumfpack_la_LDFLAGS = -no-undefined -release $(PACKAGE_VERSION)

@@ -72,22 +72,22 @@ noinst_LTLIBRARIES = \
 	libcs_convert.la
 
 libcxsparse_di_la_SOURCES = $(CS_SOURCE)
-libcxsparse_di_la_LIBADD = -lm $(CODE_COVERAGE_LIBS)
+libcxsparse_di_la_LIBADD = $(POSIX_LIBS) $(CODE_COVERAGE_LIBS)
 libcxsparse_di_la_CPPFLAGS = $(AM_CPPFLAGS) $(CODE_COVERAGE_CPPFLAGS)
 libcxsparse_di_la_CFLAGS = $(AM_CFLAGS) $(CODE_COVERAGE_CFLAGS)
 
 libcxsparse_dl_la_SOURCES = $(CS_SOURCE)
-libcxsparse_dl_la_LIBADD = -lm $(CODE_COVERAGE_LIBS)
+libcxsparse_dl_la_LIBADD = $(POSIX_LIBS) $(CODE_COVERAGE_LIBS)
 libcxsparse_dl_la_CPPFLAGS = $(AM_CPPFLAGS) $(CODE_COVERAGE_CPPFLAGS) -DCS_LONG
 libcxsparse_dl_la_CFLAGS = $(AM_CFLAGS) $(CODE_COVERAGE_CFLAGS)
 
 libcxsparse_ci_la_SOURCES = $(CS_SOURCE)
-libcxsparse_ci_la_LIBADD = -lm $(CODE_COVERAGE_LIBS)
+libcxsparse_ci_la_LIBADD = $(POSIX_LIBS) $(CODE_COVERAGE_LIBS)
 libcxsparse_ci_la_CPPFLAGS = $(AM_CPPFLAGS) $(CODE_COVERAGE_CPPFLAGS) -DCS_COMPLEX
 libcxsparse_ci_la_CFLAGS = $(AM_CFLAGS) $(CODE_COVERAGE_CFLAGS)
 
 libcxsparse_cl_la_SOURCES = $(CS_SOURCE)
-libcxsparse_cl_la_LIBADD = -lm $(CODE_COVERAGE_LIBS)
+libcxsparse_cl_la_LIBADD = $(POSIX_LIBS) $(CODE_COVERAGE_LIBS)
 libcxsparse_cl_la_CPPFLAGS = $(AM_CPPFLAGS) $(CODE_COVERAGE_CPPFLAGS) -DCS_LONG -DCS_COMPLEX
 libcxsparse_cl_la_CFLAGS = $(AM_CFLAGS) $(CODE_COVERAGE_CFLAGS)
 

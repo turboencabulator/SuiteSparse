@@ -9,5 +9,5 @@ Version: @PACKAGE_VERSION@
 URL: @PACKAGE_URL@
 Requires.private: @UMFPACK_REQUIRES@
 Libs: -L${libdir} -lumfpack
-Libs.private: @BLAS_LIBS@ -lm
+Libs.private: @BLAS_LIBS@ @POSIX_LIBS@
 Cflags: -I${includedir}/umfpack

@@ -9,5 +9,5 @@ Version: @PACKAGE_VERSION@
 URL: @PACKAGE_URL@
 Requires.private: cholmod suitesparseconfig
 Libs: -L${libdir} -lspqr
-Libs.private: @TBB_LIBS@ @LAPACK_LIBS@ @BLAS_LIBS@ -lm
+Libs.private: @TBB_LIBS@ @LAPACK_LIBS@ @BLAS_LIBS@ @POSIX_LIBS@
 Cflags: -I${includedir}/spqr

@@ -18,10 +18,18 @@ AC_PROG_CC
 AC_PROG_F77
 AX_CODE_COVERAGE
 
-AS_VAR_SET([LIBS_SAVED], [$LIBS])
-
 # Checks for libraries.
-AC_CHECK_LIB([m], [sqrt])
+AC_DEFUN([SS_SEARCH_LIBS],
+	[AC_SEARCH_LIBS([$1], [$2],
+		[test "$ac_res" = "none required" || $3="$ac_res $$3"],
+		[AC_MSG_ERROR([cannot find library containing $1])],
+		[$4])])
+
+AS_VAR_SET([LIBS_SAVED], [$LIBS])
+AS_VAR_SET([POSIX_LIBS])
+SS_SEARCH_LIBS([sqrt], [m], [POSIX_LIBS])
+AC_SUBST([POSIX_LIBS])
+AS_VAR_SET([LIBS], [$LIBS_SAVED])
 
 PKG_CHECK_MODULES([SUITESPARSECONFIG], [suitesparseconfig])
 
@@ -32,9 +40,6 @@ AC_CHECK_HEADERS([limits.h stddef.h stdlib.h])
 AC_TYPE_SIZE_T
 
 # Checks for library functions.
-AC_CHECK_FUNCS([sqrt])
-
-AS_VAR_SET([LIBS], [$LIBS_SAVED])
 
 m4_ifdef([PKG_INSTALLDIR], [PKG_INSTALLDIR], [AC_SUBST([pkgconfigdir], [${libdir}/pkgconfig])])
 AC_CONFIG_FILES([

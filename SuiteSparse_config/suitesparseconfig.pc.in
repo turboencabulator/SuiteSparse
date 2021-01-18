@@ -8,5 +8,5 @@ Description: SuiteSparse common library
 Version: @PACKAGE_VERSION@
 URL: @PACKAGE_URL@
 Libs: -L${libdir} -lsuitesparseconfig
-Libs.private: -lm
+Libs.private: @POSIX_LIBS@
 Cflags: -I${includedir}

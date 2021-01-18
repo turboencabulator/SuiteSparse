@@ -58,19 +58,19 @@ check_PROGRAMS = \
 	ut_zl
 
 ut_di_SOURCES = ut.c
-ut_di_LDADD = $(top_builddir)/Source/libumfpack.la $(AMD_LIBS) $(SUITESPARSECONFIG_LIBS) -lm
+ut_di_LDADD = $(top_builddir)/Source/libumfpack.la $(AMD_LIBS) $(SUITESPARSECONFIG_LIBS) $(POSIX_LIBS)
 ut_di_CPPFLAGS = $(AM_CPPFLAGS) -DDINT
 
 ut_dl_SOURCES = ut.c
-ut_dl_LDADD = $(top_builddir)/Source/libumfpack.la $(AMD_LIBS) $(SUITESPARSECONFIG_LIBS) -lm
+ut_dl_LDADD = $(top_builddir)/Source/libumfpack.la $(AMD_LIBS) $(SUITESPARSECONFIG_LIBS) $(POSIX_LIBS)
 ut_dl_CPPFLAGS = $(AM_CPPFLAGS) -DDLONG
 
 ut_zi_SOURCES = ut.c
-ut_zi_LDADD = $(top_builddir)/Source/libumfpack.la $(AMD_LIBS) $(SUITESPARSECONFIG_LIBS) -lm
+ut_zi_LDADD = $(top_builddir)/Source/libumfpack.la $(AMD_LIBS) $(SUITESPARSECONFIG_LIBS) $(POSIX_LIBS)
 ut_zi_CPPFLAGS = $(AM_CPPFLAGS) -DZINT
 
 ut_zl_SOURCES = ut.c
-ut_zl_LDADD = $(top_builddir)/Source/libumfpack.la $(AMD_LIBS) $(SUITESPARSECONFIG_LIBS) -lm
+ut_zl_LDADD = $(top_builddir)/Source/libumfpack.la $(AMD_LIBS) $(SUITESPARSECONFIG_LIBS) $(POSIX_LIBS)
 ut_zl_CPPFLAGS = $(AM_CPPFLAGS) -DZLONG
 
 check-local: $(check_PROGRAMS)

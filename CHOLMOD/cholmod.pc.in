@@ -9,5 +9,5 @@ Version: @PACKAGE_VERSION@
 URL: @PACKAGE_URL@
 Requires.private: @CHOLMOD_REQUIRES@
 Libs: -L${libdir} -lcholmod
-Libs.private: @LAPACK_LIBS@ @BLAS_LIBS@ -lm
+Libs.private: @LAPACK_LIBS@ @BLAS_LIBS@ @POSIX_LIBS@
 Cflags: -I${includedir}/cholmod

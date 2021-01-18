@@ -17,8 +17,6 @@ AC_PROG_INSTALL
 AC_PROG_CC
 AX_CODE_COVERAGE
 
-AS_VAR_SET([LIBS_SAVED], [$LIBS])
-
 # Checks for libraries.
 PKG_CHECK_MODULES([SUITESPARSECONFIG], [suitesparseconfig])
 
@@ -28,8 +26,6 @@ AC_CHECK_HEADERS([stddef.h stdlib.h string.h])
 # Checks for typedefs, structures, and compiler characteristics.
 
 # Checks for library functions.
-
-AS_VAR_SET([LIBS], [$LIBS_SAVED])
 
 m4_ifdef([PKG_INSTALLDIR], [PKG_INSTALLDIR], [AC_SUBST([pkgconfigdir], [${libdir}/pkgconfig])])
 AC_CONFIG_FILES([

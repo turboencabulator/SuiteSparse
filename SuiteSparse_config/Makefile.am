@@ -16,7 +16,7 @@ pkgconfig_DATA = suitesparseconfig.pc
 
 lib_LTLIBRARIES = libsuitesparseconfig.la
 libsuitesparseconfig_la_SOURCES = SuiteSparse_config.c
-libsuitesparseconfig_la_LIBADD = -lm $(CODE_COVERAGE_LIBS)
+libsuitesparseconfig_la_LIBADD = $(POSIX_LIBS) $(CODE_COVERAGE_LIBS)
 libsuitesparseconfig_la_CPPFLAGS = $(AM_CPPFLAGS) $(CODE_COVERAGE_CPPFLAGS)
 libsuitesparseconfig_la_CFLAGS = $(AM_CFLAGS) $(CODE_COVERAGE_CFLAGS)
 libsuitesparseconfig_la_LDFLAGS = -no-undefined -release $(PACKAGE_VERSION)
